@@ -6,7 +6,17 @@
         <title>GuidedTours</title>
         <link rel="stylesheet" type="text/css" href="wageup.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+        <style>
+          .selected {
+            color: red;
+          }
+          .highlightnew {
+            background: green;
+          }
+            .highlightpopular {
+                background: grey;
+            }
+      </style>
     </head>
     <body>
     <div class="container">
@@ -15,25 +25,28 @@
             <div id="tours" class="card">
               <ul class="list-group list-group-flush">
 
-                <li class="usa tour list-group-item"; data-name="New York">
+                <li class="usa tour newOffer list-group-item"; data-name="New York" data-price="$550">
                   <h3>New York, New York</h3>
                   <span class="details badge badge-success">$1,899 for 7 nights</span>
                   <button class="book btn btn-primary">Book Now</button>
                 </li>
 
-                <li class="europe tour list-group-item" data-name="Paris">
+                <li class="europe tour newOffer list-group-item" data-name="Paris" data-price="$450">
                   <h3>Paris, France</h3>
                   <span class="details badge badge-success">$2,299 for 7 nights</span>
                   <button class="book btn btn-primary">Book Now</button>
                 </li>
 
-                <li class="asia tour list-group-item" data-name="Tokyo">
+                <li class="asia tour popular list-group-item" data-name="Tokyo" data-price="$650">
                   <h3>Tokyo, Japan</h3>
                   <span class="details badge badge-success">$3,799 for 7 nights</span>
                   <button class="book btn btn-primary">Book Now</button>
                 </li>
-
               </ul>
+                <ul id="buttons">
+                <button class="filterNew btn btn-info">New</button>
+                <button class="filterPopular btn btn-info">Popular</button>
+                </ul>
             </div>
         </div>
 
