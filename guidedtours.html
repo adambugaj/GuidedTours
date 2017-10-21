@@ -16,6 +16,9 @@
             .highlightpopular {
                 background: #39CCCC;
             }
+            ul {
+                display:none;
+            }
       </style>
     </head>
     <body>
@@ -23,8 +26,10 @@
        <h2>Guided Tours</h2>
             <hr>
             <div id="tours" class="card">
+                <!-- click to show -->
+                <button type="button" value="Show Offers" class="btn showOffers btn-primary btn-sm">Show Offers</button>
+                
               <ul class="list-group list-group-flush">
-
                 <li class="usa tour newOffer list-group-item"; data-name="New York" data-price="$550">
                   <h3>New York, New York</h3>
                   <span class="details badge badge-success">$1,899 for 7 nights</span>
@@ -43,7 +48,7 @@
                   <button class="book btn btn-primary">Book Now</button>
                 </li>
               </ul>
-                <ul id="buttons">
+                <ul id="buttons" class="list-group list list-group-flush">
                 <button class="filterNew btn btn-info">New</button>
                 <button class="filterPopular btn btn-info">Popular</button>
                 </ul>

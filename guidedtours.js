@@ -1,4 +1,16 @@
-$(document).ready(function() {
+//// hide offer before the Dom is loaded
+//$('ul').hide()
+$(document).ready(function() {   
+    
+    //click to show offers
+    $('.card').on('click', '.showOffers', function() {
+       $('.showOffers').html('Hide Offers');
+       $('ul').slideDown();
+    });
+    //click to hide offers
+    $('.card').on('click','.showOffers', function() {
+  //     $('ul').slideUp(); 
+    });
     
     // click to book, to show info and close button and span
    $('li').on('click', 'button', function(){
@@ -13,13 +25,15 @@ $(document).ready(function() {
     
     // filter new offers by clicking a "new" button
     $('#buttons').on('click','.filterNew', function() {
-        $('.tour').filter('.newOffer').addClass('highlightnew');
-        $('.highlightpopular').removeClass('highlightpopular');
+            $('.tour').filter('.newOffer').addClass('highlightnew');
+            $('.highlightpopular').removeClass('highlightpopular');
         });
     
         // filter by popular offers
         $('#buttons').on('click', '.filterPopular', function() { 
-        $('.tour').filter('.popular').addClass('highlightpopular');
-        $('.highlightnew').removeClass('highlightnew');
+            $('.tour').filter('.popular').addClass('highlightpopular');
+            $('.highlightnew').removeClass('highlightnew');
         });
+    
+    
 });
