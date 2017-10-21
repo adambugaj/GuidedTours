@@ -2,15 +2,17 @@
 //$('ul').hide()
 $(document).ready(function() {   
     
+    function showHideOffer() {
+        $('ul').slideToggle();
+    }
+    
     //click to show offers
-    $('.card').on('click', '.showOffers', function() {
+    $('.card').on('click', '.showOffers', showHideOffer, function() {
        $('.showOffers').html('Hide Offers');
-       $('ul').slideDown();
     });
-    //click to hide offers
-    $('.card').on('click','.showOffers', function() {
-  //     $('ul').slideUp(); 
-    });
+    
+    //click to hide offers - change name to show offers doesn't work!!
+    $('.card').on('click','.showOffers', showHideOffer);
     
     // click to book, to show info and close button and span
    $('li').on('click', 'button', function(){
