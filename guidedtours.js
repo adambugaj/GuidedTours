@@ -46,12 +46,16 @@ $(document).ready(function() {
        var numberNights = +$(this).val(); 
        var priceOffer = +$('li').closest('.tour').data('price');
         
-        $('#numberPriceOffer').text(numberNights * priceOffer);
-        $('li').find('#numberNightsOffer').text(numberNights);
+       // $('#numberPriceOffer').text(numberNights * priceOffer);
+        $('#numberPriceOffer').each(function(index){
+            $(index).text(index + $(this).text(numberNights * priceOffer));
+        })
+        
+        text(numberNights);
         $('.numberNights').on('focus', function() {
            $('.numberNights').val(7); 
         });
     });
     
-    
+    $(document.body).append('hello');
 });
