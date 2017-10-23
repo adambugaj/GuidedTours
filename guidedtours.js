@@ -8,7 +8,7 @@ $(document).ready(function() {
     
     //click to show offers
     $('.card').on('click', '.showOffers', showHideOffer, function() {
-       $('.showOffers').html('Hide Offers');
+        $(this).text($(this).text() === 'Hide Offers' ? "Show Offers" : "Hide Offers");
     });
     
     //click to hide offers - change name to show offers doesn't work!!
@@ -22,7 +22,8 @@ $(document).ready(function() {
        $(this).closest('.tour').append(message);
        
        $(this).prev().closest('.details').remove();
-       $(this).remove();     
+       $(this).remove();        
+       $('li').unbind("click");
    });
     
     // filter new offers by clicking a "new" button
