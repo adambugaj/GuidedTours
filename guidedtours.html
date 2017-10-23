@@ -17,7 +17,7 @@
                 background: #39CCCC;
             }
             ul {
-                display:none;
+                display:run-in;
             }
       </style>
     </head>
@@ -30,9 +30,12 @@
                 <button type="button" value="Show Offers" class="btn showOffers btn-primary btn-sm">Show Offers</button>
                 
               <ul class="list-group list-group-flush">
-                <li class="usa tour newOffer list-group-item"; data-name="New York" data-price="$550">
+                <li class="usa tour newOffer list-group-item"; data-name="New York" data-price="550">
                   <h3>New York, New York</h3>
-                  <span class="details badge badge-success">$1,899 for 7 nights</span>
+                    
+                    <span class="details badge badge-success">$<span id="numberPriceOffer">1,899</span> for 
+                    <span id="numberNightsOffer">7</span> nights</span>
+                    
                   <button class="book btn btn-primary">Book Now</button>
                 </li>
 
@@ -53,6 +56,15 @@
                 <button class="filterPopular btn btn-info">Popular</button>
                 </ul>
             </div>
+        
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Number of nights</label>
+                <input type="nights" class="numberNights form-control" aria-describedby="emailHelp" placeholder="Enter a number">
+                
+              </div>
+                  <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+            </form> 
         </div>
 
 

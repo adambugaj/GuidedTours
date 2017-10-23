@@ -29,6 +29,9 @@ $(document).ready(function() {
     $('#buttons').on('click','.filterNew', function() {
             $('.tour').filter('.newOffer').addClass('highlightnew');
             $('.highlightpopular').removeClass('highlightpopular');
+                $('#buttons').on('click', '.filterNew', function() {
+                    $('.highlightnew').removeClass('highlightnew');
+                });
         });
     
         // filter by popular offers
@@ -36,6 +39,18 @@ $(document).ready(function() {
             $('.tour').filter('.popular').addClass('highlightpopular');
             $('.highlightnew').removeClass('highlightnew');
         });
+    
+    // input for number nights
+    $('.numberNights').on('keyup', function() {
+       var numberNights = +$(this).val(); 
+       var priceOffer = +$('li').closest('.tour').data('price');
+        
+        $('#numberPriceOffer').text(numberNights * priceOffer);
+        $('li').find('#numberNightsOffer').text(numberNights);
+        $('.numberNights').on('focus', function() {
+           $('.numberNights').val(7); 
+        });
+    });
     
     
 });
