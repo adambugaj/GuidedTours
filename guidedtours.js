@@ -8,11 +8,34 @@ $(document).ready(function() {
     
     //click to show offers
     $('.card').on('click', '.showOffers', showHideOffer, function() {
-        $(this).text($(this).text() === 'Hide Offers' ? "Show Offers" : "Hide Offers");
+        
+        if ($(this).text() === "Show Offers") {
+                $(this).text('Hide Offers');
+                $(this).delay(400);
+        } 
+        else if ($(this).text() === "Hide Offers") {
+                $(this).text('Show Offers');
+            };  
+        
+        
+        
+       // $(this).text($(this).text() === 'Hide Offers' ? "Show Offers" : "Hide Offers");
     });
     
     //click to hide offers - change name to show offers doesn't work!!
     $('.card').on('click','.showOffers', showHideOffer);
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     // click to book, to show info and close button and span
    $('li').on('click', 'button', function(){
@@ -30,11 +53,11 @@ $(document).ready(function() {
     $('#buttons').on('click','.filterNew', function() {
             $('.tour').filter('.newOffer').addClass('highlightnew');
             $('.highlightpopular').removeClass('highlightpopular');
-                $('#buttons').on('click', '.filterNew', function() {
-                    $('.highlightnew').removeClass('highlightnew');
-                });
+                
         });
-    
+    $('#buttons').on('click', '.filterNew', function() {
+                    $('.highlightnew').toggleClass('highlightnew');
+                });
         // filter by popular offers
         $('#buttons').on('click', '.filterPopular', function() { 
             $('.tour').filter('.popular').addClass('highlightpopular');
@@ -59,3 +82,6 @@ $(document).ready(function() {
     
     $(document.body).append('hello');
 });
+
+
+// to do: each for every price lern looping in jqeury for different examples.
