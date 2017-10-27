@@ -26,33 +26,42 @@
        <h2>Guided Tours</h2>
             <hr>
             <div id="tours" class="card">
-                <!-- click to show -->
+                
+                <!-- click to show offers -->
                 <button type="button" value="Show Offers" class="btn showOffers btn-primary btn-sm">Show Offers</button>
                 
-              <ul class="list-group list-group-flush">
+              <!-- offers list -->    
+              <ul class="list-group list-group-flush offer">
+                  
+                <!-- New York, USA -->
                 <li class="usa tour newOffer list-group-item"; data-name="New York" data-price="550">
                   <h3>New York, USA</h3>
                     
                     <span class="details badge badge-success">$<span id="numberPriceOffer">1,899</span> for 
                     <span id="numberNightsOffer">7</span> nights</span>
-                    
+            
                   <button class="book btn btn-primary">Book Now</button>
                 </li>
 
+                <!-- Paris, France -->
                 <li class="europe tour newOffer list-group-item" data-name="Paris" data-price="450">
                   <h3>Paris, France</h3>
+                    
                     <span class="details badge badge-success">$<span id="numberPriceOffer">2,299</span> for 
                     <span id="numberNightsOffer">7</span> nights</span>
                     
                   <button class="book btn btn-primary">Book Now</button>
                 </li>
-
+                  
+                <!-- Tokyo, Japan -->
                 <li class="asia tour newOffer popular list-group-item" data-name="Tokyo" data-price="650">
                   <h3>Tokyo, Japan</h3>
                   <span class="details badge badge-success">$<span id="numberPriceOffer">3,799</span> for 
                     <span id="numberNightsOffer">7</span> nights</span>
                   <button class="book btn btn-primary">Book Now</button>
                 </li>
+                  
+              <!-- Buttons for selecting popular and new offers -->
               </ul>
                 <ul id="buttons" class="list-group list list-group-flush">
                 <button class="filterNew btn btn-info">New</button>
@@ -60,6 +69,7 @@
                 </ul>
             </div>
         
+            <!-- Form for number nights -->
             <form>
               <div class="form-group">
                 <label for="exampleInputEmail1">Number of nights</label>

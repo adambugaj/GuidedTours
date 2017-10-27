@@ -15,8 +15,9 @@ $(document).ready(function() {
         } 
         else if ($(this).text() === "Hide Offers") {
                 $(this).text('Show Offers');
-            };  
-        */ 
+            };   
+            */ 
+        
     // the fastest way of optimization code
         $(this).text($(this).text() === 'Hide Offers' ? 'Show Offers' : 'Hide Offers');
         
@@ -34,43 +35,25 @@ $(document).ready(function() {
        $(this).prev().closest('.details').remove();
        $(this).remove();        
        $('li').unbind("click");
-   });
-    
-    
-    
-    
-    
-    
-    
-    
+   }); 
     
     // filter new offers by clicking a "new" button
     
          $('.filterNew').on('click', function(){
             $('.tour').closest('.newOffer').toggleClass('highlightnew');
-             $('.highlightpopular').removeClass('highlightpopular')
+             $('.highlightpopular').removeClass('highlightpopular');
          });
-    
  
         // filter by popular offers
         $('#buttons').on('click', '.filterPopular', function() { 
-            $('.tour').filter('.popular').addClass('highlightpopular');
+            $('.tour').closest('.popular').toggleClass('highlightpopular');
             $('.highlightnew').removeClass('highlightnew');
             
+            //monitor how many times button is clicked
             if (this.id === 'filterPopular') {
                 console.log('this button was clicked');
             };
         });
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -79,10 +62,21 @@ $(document).ready(function() {
        var numberNights = +$(this).val(); 
        var priceOffer = +$('li').closest('.tour').data('price');
         
-       // $('#numberPriceOffer').text(numberNights * priceOffer);
-        $('#numberPriceOffer').each(function(index){
-            $(index).text(index + $(this).text(numberNights * priceOffer));
+        
+        $('li').find('#numberNightsOffer').each(function(index) {
+            $(this).text(numberNights); 
+        });
+        
+        $('li').find('#numberPriceOffer').each(function(index){
+            
+              $(this).text(numberNights * priceOffer);
         })
+        
+        
+        
+        
+        
+        $('#numberPriceOffer').text(numberNights * priceOffer);
         
         text(numberNights);
         $('.numberNights').on('focus', function() {
