@@ -6,36 +6,23 @@ $(document).ready(function() {
         $('ul').slideToggle();
     }
     
-    //click to show offers
-    $('.card').on('click', '.showOffers', showHideOffer, function() {
+    //click to show offers, change name of button
+    $('.card').on('click', '.showOffers', function() {
         
+    /* My idea for changing name of button  
         if ($(this).text() === "Show Offers") {
                 $(this).text('Hide Offers');
-                $(this).delay(400);
         } 
         else if ($(this).text() === "Hide Offers") {
                 $(this).text('Show Offers');
             };  
+        */ 
+    // the fastest way of optimization code
+        $(this).text($(this).text() === 'Hide Offers' ? 'Show Offers' : 'Hide Offers');
         
-        
-        
-       // $(this).text($(this).text() === 'Hide Offers' ? "Show Offers" : "Hide Offers");
-    });
+    });  
     
-    //click to hide offers - change name to show offers doesn't work!!
     $('.card').on('click','.showOffers', showHideOffer);
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     // click to book, to show info and close button and span
    $('li').on('click', 'button', function(){
@@ -49,20 +36,43 @@ $(document).ready(function() {
        $('li').unbind("click");
    });
     
+    
+    
+    
+    
+    
+    
+    
+    
     // filter new offers by clicking a "new" button
-    $('#buttons').on('click','.filterNew', function() {
-            $('.tour').filter('.newOffer').addClass('highlightnew');
-            $('.highlightpopular').removeClass('highlightpopular');
-                
-        });
-    $('#buttons').on('click', '.filterNew', function() {
-                    $('.highlightnew').toggleClass('highlightnew');
-                });
+    
+         $('.filterNew').on('click', function(){
+            $('.tour').closest('.newOffer').toggleClass('highlightnew');
+             $('.highlightpopular').removeClass('highlightpopular')
+         });
+    
+ 
         // filter by popular offers
         $('#buttons').on('click', '.filterPopular', function() { 
             $('.tour').filter('.popular').addClass('highlightpopular');
             $('.highlightnew').removeClass('highlightnew');
+            
+            if (this.id === 'filterPopular') {
+                console.log('this button was clicked');
+            };
         });
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     // input for number nights
     $('.numberNights').on('keyup', function() {
