@@ -60,16 +60,16 @@ $(document).ready(function() {
     // input for number nights
     $('.numberNights').on('keyup', function() {
        var numberNights = +$(this).val(); 
-       var priceOffer = +$('li').closest('.tour').data('price');
+       
         
         
-        $('li').find('#numberNightsOffer').each(function(index) {
-            $(this).text(numberNights); 
+        $('.offer').find('li').each(function() {
+            $(this).find('#numberNightsOffer').text(numberNights); 
         });
         
-        $('li').find('#numberPriceOffer').each(function(index){
-            
-              $(this).text(numberNights * priceOffer);
+        $('.offer').find('li').each(function(){
+            var priceOffer = +$(this).closest('.tour').data('price');
+              $(this).find('#numberPriceOffer').text(numberNights * priceOffer);
         })
         
         
