@@ -79,7 +79,7 @@ $(document).ready(function() {
       var offerCost = offerNights * offerPrice;
        
        
-    if (offerPrice === 0) {
+    if (offerCost === 0) {
         var message = $('<ol class="breadcrumb"><li class="breadcrumb-item active" style="color:#3CB371">Success! You have booked '+offerName+' offer for 7 nights! Total Price: '+offerPrice+'$</li></ol>');
         $(this).closest('.tour').append(message);
     }
